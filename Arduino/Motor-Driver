@@ -1,0 +1,29 @@
+int PWMA_PIN = 10;
+int AI2_PIN = 8;
+int AI1_PIN = 9;
+int STBY_PIN = 2;
+
+void setup() {
+  pinMode(PWMA_PIN, OUTPUT);
+  pinMode(AI2_PIN, OUTPUT);
+  pinMode(AI1_PIN, OUTPUT);
+  pinMode(STBY_PIN, OUTPUT);
+
+  digitalWrite(STBY_PIN, HIGH);
+
+  // Forward rotation
+  digitalWrite(AI1_PIN, HIGH);
+  digitalWrite(AI2_PIN, LOW);
+}
+
+void loop() {
+  for (int i=0; i<256; i++) {
+    analogWrite(PWMA_PIN, i);
+    delay(20);
+  }
+
+  for (int i=255; i>=0; i--) {
+    analogWrite(PWMA_PIN, i);
+    delay(20);
+  }
+}
