@@ -112,7 +112,8 @@ void loop() {
     process_finished = true;
     Serial.println("OVER");
     digitalWrite(BUILTIN_LED_PIN, LOW);
-    // Make sure to add the final states the system should take such as the water pump motor being given 0 voltage
+    
+    analogWrite(PWMA_PIN, 0);
   }
 
   Serial.println("END");
