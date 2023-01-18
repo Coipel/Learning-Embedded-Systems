@@ -48,7 +48,7 @@ while True:
 # Perform more intensive operations on data here (such as data conversion and storage)
 
 # Converts the list of strings representing numbers into actual int data type
-total_strain_data = list(map(int, total_strain_data))
+total_strain_data = list(map(float, total_strain_data))
 total_valve_data = list(map(int, total_valve_data))
 total_time_data = list(map(int, total_time_data))
 
